@@ -3,9 +3,8 @@
 
 # Dependency directories
 node_modules/
+vars/
 
 # Mac Hidden Files
 .DS_Store
 
-# API Stuff
-*.env

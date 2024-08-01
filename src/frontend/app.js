@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.initMap = function() {
         const map = new google.maps.Map(document.getElementById("google-map"), {
-            center: { lat: 39.8283, lng: -98.5795 },
+            center: { lat: 39.8283, lng: -98.5795 }, // longitude and latitude centered at US!
             zoom: 4,
         });
 
