@@ -6,3 +6,6 @@ node_modules/
 
 # Mac Hidden Files
 .DS_Store
+
+# API Stuff
+.env
