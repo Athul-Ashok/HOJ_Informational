@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#map-view, #about-view {
+    display: none;
+}
+
+#map-view {
+    display: block;
+    position: relative;
+}
+
+#us-map {
+    width: 100%;
+    height: auto;
+}
+
+.pin {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#about-page-text {
+    font-size: 24px;
+    margin-left: 200px; 
+    margin-right: 200px; 
+}
+
+.image-container {
+    text-align: center; 
+    margin-top: 20px;
+    width: inherit;
+    height: inherit;
+}
+
+#back-btn {
+    display: inline-block; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

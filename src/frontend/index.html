@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Jazz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <button id="reset-btn">Reset Pins</button>
+        <h2>History of Jazz Roadmap</h2>
+        <button id="about-btn">About</button>
+    </div>
+    <div id="views">  
+        <div id="map-view" class="view" style="display:none">
+            <img src="https://articulate-heroes.s3.amazonaws.com/uploads/rte/ehwqfygd_united_50states-map.png" alt="US Map" id="us-map">
+        </div>
+        <div id="google-map-view" class="view" style="display:none">
+            <div id="google-map" style="height: 100vh; width: 100%;"></div>
+        </div>
+        <div id="about-view" class="view" style="display:none">
+            <h2>About This Website</h2>
+            <p id="about-page-text">This website was created to spread awareness about Jazz's <strong>roots in slavery</strong> and its complex history. 
+                It aims to provide a digestible means of learning some aspects of its history and help people discover a newfound appreciation for Jazz 
+                and the music it inspires in today's music scene.</p>
+            <div class="image-container">
+                <img src="https://i0.wp.com/culturacolectiva.com/wp-content/uploads/images/QZTGYIRHDNE55BVW2ZB76MDAJE.png?ssl=1" id = "jazz-motivation" style="border-radius:8px">
+            </div>
+            <button id="back-btn">Back to Map</button>
+        </div>
+    </div>
+</body>
+</html>
