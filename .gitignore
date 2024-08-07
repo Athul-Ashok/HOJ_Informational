@@ -4,6 +4,7 @@
 # Dependency directories
 node_modules/
 vars/
+.env
 
 # Mac Hidden Files
 .DS_Store

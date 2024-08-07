@@ -21,24 +21,11 @@ button {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 button:hover {
     background-color: #555;
-}
-
-#map-view, #about-view {
-    display: none;
-}
-
-#map-view {
-    display: block;
-    position: relative;
-}
-
-#us-map {
-    width: 100%;
-    height: auto;
 }
 
 .pin {

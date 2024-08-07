@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History of Jazz</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.1/dist/pouchdb.min.js"></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
     <div class="navbar">
@@ -16,12 +14,12 @@
         <h2>History of Jazz Roadmap</h2>
         <button id="about-btn">About</button>
     </div>
-    <div id="views">  
-        <div id="map-view" class="view" style="display:none">
-            <img src="https://articulate-heroes.s3.amazonaws.com/uploads/rte/ehwqfygd_united_50states-map.png" alt="US Map" id="us-map">
-        </div>
+    <div id="views"> 
         <div id="google-map-view" class="view" style="display:none">
-            <div id="google-map" style="height: 100vh; width: 100%;"></div>
+            <div id="google-map" style="width:100%;height:650px;"></div>
+            <input type="text" id="genre-input" placeholder="Enter genre">
+            <button id="query-genre-btn">Query Genre</button>
+            <button id="add-pin-btn">Add Pin (For Testing)</button>
         </div>
         <div id="about-view" class="view" style="display:none">
             <h2>About This Website</h2>
@@ -29,10 +27,47 @@
                 It aims to provide a digestible means of learning some aspects of its history and help people discover a newfound appreciation for Jazz 
                 and the music it inspires in today's music scene.</p>
             <div class="image-container">
-                <img src="https://i0.wp.com/culturacolectiva.com/wp-content/uploads/images/QZTGYIRHDNE55BVW2ZB76MDAJE.png?ssl=1" id = "jazz-motivation" style="border-radius:8px">
+                <img src="https://i0.wp.com/culturacolectiva.com/wp-content/uploads/images/QZTGYIRHDNE55BVW2ZB76MDAJE.png?ssl=1" id="jazz-motivation" style="border-radius:8px">
             </div>
             <button id="back-btn">Back to Map</button>
         </div>
     </div>
+
+    <!-- Google Maps script handled in-line. -->
+    <script>
+        let map;
+        function myMap() {
+            const mapProp= {
+                center: new google.maps.LatLng(38.8,-99.5795), // centered at united states.
+                zoom:5,
+            };
+            map = new google.maps.Map(document.getElementById("google-map"), mapProp);
+        }
+
+        function addMarker(lat, lng, info) {
+            const marker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat, lng),
+                map: map,
+            });
+
+            const infowindow = new google.maps.InfoWindow({
+                content: `<div>
+                            <h3>${info.name}</h3>
+                            <p>${info.description}</p>
+                            <p>Genres: ${info.genres}</p>
+                            <img src="${info.image}" alt="${info.name}" style="width:100px;">
+                          </div>`
+            });
+
+            marker.addListener('mouseover', function() {
+                infowindow.open(map, marker);
+            });
+
+            marker.addListener('mouseout', function() {
+                infowindow.close();
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmdbiZZJowAGKyFKKFsznGxNaNtK0YKC0&callback=myMap"></script>
 </body>
 </html>

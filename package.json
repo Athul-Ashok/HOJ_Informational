@@ -23,9 +23,16 @@
   },
   "contributors": [],
   "scripts": {
-    "start": "http-server src/frontend -p 3000 -c-1 -o -s"
+    "start": "http-server src -p 3002 -c-1 -o -s"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0"
   }
 }
